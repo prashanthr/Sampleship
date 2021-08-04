@@ -5,9 +5,9 @@ const ck = require('ckey');
 
 export default function Login(){
 return (
-<div class="container centered justify-content-center">
-<div class="col-xs-1 col-md-8">
-   <div class="row text-center justify-content-center">
+<div className="container centered justify-content-center">
+<div className="col-xs-1 col-md-8">
+   <div className="row text-center justify-content-center">
     <h1> Please Log In</h1>
 
     </div>
