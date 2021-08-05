@@ -1,50 +1,55 @@
 import React from 'react';
 import { Formik} from 'formik';
 import * as Yup from 'yup';
-import {Router, Switch, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { Form, Input, InputNumber, Checkbox } from 'formik-antd'
-export default function AuthenticatedApp(){
-return (
-<div>
-<div>
-<Router>
-  <div>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-         <Link to="/samplereq">New Sample Request</Link>
-         </li>
-         <li>
-         <Link to="/ship">Outstanding Request</Link>
-         </li>
-        </ul>
-      </nav>
-  <Switch>
-    <Route path="/ship">
-      <Ship />
-    </Route>
-    <Route path="/samplereq">
-      <SampleReq />
-    </Route>
-    <Route path="/">
-      <AuthenticatedApp />
-    </Route>
-  </Switch>
-</div>
-</Router>
-</div>
-<div class="container centered justify-content-center">
-  <div class="col-xs-1 col-md-8">
-   <div class="row text-center justify-content-center">
-    <h1> Internal Sample Request System </h1>
+
+export default function AuthenticatedApp() {
+  return (
+    <div>
+      <div>
+          <Router>
+            <div>
+                <nav>
+                  <ul>
+                      <li>
+                        <Link to="/">
+                        Home</Link>
+                      </li>
+                      <li>
+                        <Link to="/samplereq">
+                        New Sample Request</Link>
+                      </li>
+                      <li>
+                        <Link to="/ship">
+                        Outstanding Request</Link>
+                      </li>
+                  </ul>
+                </nav>
+                <Switch>
+                  <Route path="/ship">
+                      <Ship />
+                  </Route>
+                  <Route path="/samplereq">
+                      <SampleReq />
+                  </Route>
+                  <Route path="/">
+                      <AuthenticatedApp />
+                  </Route>
+                </Switch>
+            </div>
+          </Router>
+      </div>
+      <div className="container centered justify-content-center">
+          <div className="col-xs-1 col-md-8">
+            <div className="row text-center justify-content-center">
+                <h1> Internal Sample Request System </h1>
+            </div>
+          </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-)}
+  )
+}
 
 function Ship(){
   return(
@@ -54,9 +59,9 @@ function Ship(){
 
 function SampleReq(){
   return(
-    <div class="container centered justify-content-center">
-    <div class="col-xs-1 col-md-8">
-       <div class="row text-center justify-content-center">
+    <div className="container centered justify-content-center">
+    <div className="col-xs-1 col-md-8">
+       <div className="row text-center justify-content-center">
         <h1> Internal Sample Request System </h1>
         <Formik
           initialValues={{ firstName: '', lastName: '', email: '' , semail:''}}
