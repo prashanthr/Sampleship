@@ -20,6 +20,7 @@ function AuthProvider (props) {
         const data = await res.json()
         if(data.error) throw new Error(data.error)
         mutate()
+        this.props.history.push('/')
     }
 
     const logOut = async () => {
