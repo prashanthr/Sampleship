@@ -20,6 +20,7 @@ function AuthProvider (props) {
         const data = await res.json()
         if(data.error) throw new Error(data.error)
         mutate()
+        this.props.history.push('/')
     }
 
     const logOut = async () => {
@@ -41,9 +42,6 @@ function AuthProvider (props) {
 
 const useAuth = () => {
   const context = React.useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error(`useAuth must be used within a AuthProvider`)
-  }
   return context
 }
 
